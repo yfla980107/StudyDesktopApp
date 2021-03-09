@@ -29,11 +29,11 @@ namespace ScoreCalc
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtKorean = new System.Windows.Forms.TextBox();
+            this.TxtMath = new System.Windows.Forms.TextBox();
+            this.TxtEnglish = new System.Windows.Forms.TextBox();
             this.TxtSum = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtAvg = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,31 +41,31 @@ namespace ScoreCalc
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnCalc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TxtKorean
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
+            this.TxtKorean.Location = new System.Drawing.Point(100, 39);
+            this.TxtKorean.Name = "TxtKorean";
+            this.TxtKorean.Size = new System.Drawing.Size(100, 21);
+            this.TxtKorean.TabIndex = 0;
             // 
-            // textBox2
+            // TxtMath
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 1;
+            this.TxtMath.Location = new System.Drawing.Point(100, 81);
+            this.TxtMath.Name = "TxtMath";
+            this.TxtMath.Size = new System.Drawing.Size(100, 21);
+            this.TxtMath.TabIndex = 1;
             // 
-            // textBox3
+            // TxtEnglish
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 2;
+            this.TxtEnglish.Location = new System.Drawing.Point(100, 119);
+            this.TxtEnglish.Name = "TxtEnglish";
+            this.TxtEnglish.Size = new System.Drawing.Size(100, 21);
+            this.TxtEnglish.TabIndex = 2;
             // 
             // TxtSum
             // 
@@ -75,13 +75,13 @@ namespace ScoreCalc
             this.TxtSum.Size = new System.Drawing.Size(100, 21);
             this.TxtSum.TabIndex = 3;
             // 
-            // textBox5
+            // TxtAvg
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 84);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 4;
+            this.TxtAvg.Location = new System.Drawing.Point(106, 84);
+            this.TxtAvg.Name = "TxtAvg";
+            this.TxtAvg.ReadOnly = true;
+            this.TxtAvg.Size = new System.Drawing.Size(100, 21);
+            this.TxtAvg.TabIndex = 4;
             // 
             // label1
             // 
@@ -113,9 +113,9 @@ namespace ScoreCalc
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.TxtKorean);
+            this.groupBox1.Controls.Add(this.TxtMath);
+            this.groupBox1.Controls.Add(this.TxtEnglish);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(39, 40);
@@ -147,7 +147,7 @@ namespace ScoreCalc
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.TxtSum);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.TxtAvg);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(294, 40);
             this.groupBox2.Name = "groupBox2";
@@ -156,24 +156,25 @@ namespace ScoreCalc
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "결과";
             // 
-            // button1
+            // BtnCalc
             // 
-            this.button1.Location = new System.Drawing.Point(400, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "계산";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCalc.Location = new System.Drawing.Point(400, 171);
+            this.BtnCalc.Name = "BtnCalc";
+            this.BtnCalc.Size = new System.Drawing.Size(100, 29);
+            this.BtnCalc.TabIndex = 16;
+            this.BtnCalc.Text = "계산";
+            this.BtnCalc.UseVisualStyleBackColor = true;
+            this.BtnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
             // 
-            // Form1
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 293);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(566, 259);
+            this.Controls.Add(this.BtnCalc);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.Text = "성적계산기";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -185,11 +186,11 @@ namespace ScoreCalc
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtKorean;
+        private System.Windows.Forms.TextBox TxtMath;
+        private System.Windows.Forms.TextBox TxtEnglish;
         private System.Windows.Forms.TextBox TxtSum;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtAvg;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -197,7 +198,7 @@ namespace ScoreCalc
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnCalc;
     }
 }
 

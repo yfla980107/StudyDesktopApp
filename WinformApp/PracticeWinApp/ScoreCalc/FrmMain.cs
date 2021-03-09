@@ -16,5 +16,17 @@ namespace ScoreCalc
         {
             InitializeComponent();
         }
+
+        private void BtnCalc_Click(object sender, EventArgs e)
+        {
+            double sum;
+            double.TryParse(TxtKorean.Text+ TxtMath.Text+ TxtEnglish.Text, out sum);
+
+            double avg = sum / 3;
+
+            TxtSum.Text = ();
+            TxtAvg.Text = avg;
+
+        }
     }
 }
