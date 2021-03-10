@@ -20,12 +20,16 @@ namespace ScoreCalc
         private void BtnCalc_Click(object sender, EventArgs e)
         {
             double sum;
-            double.TryParse(TxtKorean.Text+ TxtMath.Text+ TxtEnglish.Text, out sum);
+            bool v = double.TryParse(TxtKorean.Text+ TxtMath.Text + TxtEnglish.Text, out sum);
+            
+            if(v == true)
+            {
+                TxtSum.Text = sum.ToString();
+            }    
 
-            double avg = sum / 3;
+            
 
-            TxtSum.Text = ();
-            TxtAvg.Text = avg;
+            //double avg = sum / 3;
 
         }
     }
