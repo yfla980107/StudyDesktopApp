@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AddressInfoApp
@@ -14,7 +8,7 @@ namespace AddressInfoApp
     public partial class FrmMain : Form
     {
         string connString = "Data Source=127.0.0.1;Initial Catalog=PMS;Persist Security Info=True;" +
-                            "User ID=sa;Password=mssql_p@ssw0rd!";
+                            "User ID=sa;Password=mssql_p@ssw0rd!"; // db 접속
         public FrmMain()
         {
             InitializeComponent();
@@ -118,28 +112,31 @@ namespace AddressInfoApp
                 MessageBox.Show("데이터를 선택하십시오");
                 return;
             }
-            
-            using (SqlConnection conn = new SqlConnection(connString))
-                {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
 
-                string query = $"DELETE FROM Address WHERE idx = {result}";
+            if (MessageBox.Show("삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                if (cmd.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("삭제 성공");
+                    string query = $"DELETE FROM Address WHERE idx = {result}";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("삭제 성공");
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 실패");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("삭제 실패");
-                }
+                ClearInput();
+                RefreshData();
             }
-            ClearInput();
-            RefreshData();
         }
-
         private void TxtFullName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) //13은 엔터
@@ -185,7 +182,7 @@ namespace AddressInfoApp
             }
         }
 
-        private void ClearInput()  // 입력 한 데이터 추가 후 지워줌
+        private void ClearInput()  // 버튼 초기화 메소드
         {
             TxtIdx.Text = TxtFullName.Text = TxtMobile.Text = TxtAddr.Text = "";
         }
