@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -15,6 +17,14 @@ namespace IoTSensorMonApp
     public partial class FrmMain : Form
     {
         private double xCount = 200; // 차트에 보이는 데이터 수
+        private Timer timerSimul = new Timer();
+        private Random randPhoto = new Random();
+        private bool IsSimulation = false;
+        private List<SensorData> sensors = new List<SensorData>(); // 차트, 리스트박스 출력
+        private string connString = "Data Source=127.0.0.1;" +
+                                    "Initial Catalog=IoTData;" +
+                                    "User ID=sa;" +
+                                    "password=mssql_p@ssw0rd!";
         public FrmMain()
         {
             InitializeComponent();
@@ -100,10 +110,7 @@ namespace IoTSensorMonApp
             // TODO 나중에 실제 작업시 작성
         }
 
-        private Timer timerSimul = new Timer();
-        private Random randPhoto = new Random();
-        private bool IsSimulation = false;
-        private List<SensorData> sensors = new List<SensorData>(); // 차트, 리스트박스 출력
+        
 
         /// <summary>
         /// 시뮬레이션 시작
@@ -135,6 +142,7 @@ namespace IoTSensorMonApp
             var currentTime = DateTime.Now;
             SensorData data = new SensorData(currentTime, v, IsSimulation);
             sensors.Add(data);
+            insertTable(data);
 
             // 센서값 갯수
             TxtSensorNum.Text = $"{sensors.Count}";
@@ -148,6 +156,49 @@ namespace IoTSensorMonApp
 
             // 차트에 데이터 출력
             ChtPhotoResistors.Series[0].Points.Add(v);
+
+            // 200개 넘으면
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = (sensors.Count >= xCount) ? sensors.Count : xCount;
+
+            // Zoom처리
+            if (sensors.Count > xCount)
+                ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(sensors.Count - xCount, sensors.Count);
+            else
+                ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(0, xCount);
+
+            //BtnDisplay 표시
+            if (IsSimulation)
+                BtnDisplay.Text = v.ToString();
+            else
+                BtnDisplay.Text = "~" + "\n" + v.ToString();
+        }
+        /// <summary>
+        /// IoTData데이터베이스 내 Tbl_PhotoResistor 테이블에 센서데이터 입력
+        /// </summary>
+        /// <param name="data"></param>
+        private void insertTable(SensorData data)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+
+                    var query = $"insert into Tbl_PhotoResistor " +
+                        $" (CurrentDt, Value, SimulFlag) " +
+                        $" values " +
+                        $"('{data.Current.ToString("yyyy-MM-dd HH:mm:ss")}','{data.Value}','{(data.SimulFlag == true ? "1" : "0")}');";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine($"예외발생 : {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -176,6 +227,24 @@ namespace IoTSensorMonApp
             }
 
             Environment.Exit(0);
+        }
+
+        private void BtnViewAll_Click(object sender, EventArgs e)
+        {
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = sensors.Count;
+
+            ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(0, sensors.Count);
+            ChtPhotoResistors.ChartAreas[0].AxisX.Interval = sensors.Count / 4;
+        }
+
+        private void BtnZoom_Click(object sender, EventArgs e)
+        {
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = sensors.Count;
+
+            ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(sensors.Count - xCount, sensors.Count);
+            ChtPhotoResistors.ChartAreas[0].AxisX.Interval = xCount / 4;
         }
     }
 }
