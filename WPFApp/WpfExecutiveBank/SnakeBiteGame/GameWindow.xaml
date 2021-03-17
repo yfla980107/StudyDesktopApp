@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="GameWindow" SizeToContent="WidthAndHeight"
         KeyDown="Window_KeyDown" Initialized="Window_Initialized">
-    <Grid Height="400" Width="500">
+    <Grid x:Name="GrdScreen" Height="400" Width="500">
         <Canvas x:Name="CvsGame" Background="LightSteelBlue">
             <TextBlock x:Name="TxtScore" Text="Eggs = 0" Foreground="White" FontSize="14" />
             <TextBlock x:Name="TxtTime" 
                        Canvas.Top="20"
                        Text="Time = 00:00:00" Foreground="White" FontSize="14" />
         </Canvas>
+        <Label x:Name="LblGameOver" Content="Game Over!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               FontSize="40" FontWeight="Bold" FontFamily="Arial" Foreground="Red" Visibility="Hidden"></Label>
     </Grid>
 </Window>

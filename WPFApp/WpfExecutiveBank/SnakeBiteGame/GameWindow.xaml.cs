@@ -40,18 +40,13 @@ namespace SnakeBiteGame
 
         private void Window_Initialized(object sender, EventArgs e)
         {
-            InitSnake();
-            InitEgg();
 
-            playTimer.Interval = new TimeSpan(0, 0, 0, 0, 100); //0.1초
-            playTimer.Tick += PlayTimer_Tick;
-            playTimer.Start();
         }
 
         private void InitSnake()
         {
-            int x = rand.Next(1, 500 / size) * size;
-            int y = rand.Next(1, 400 / size) * size;
+            int x = rand.Next(1, (int)GrdScreen.Width / size) * size;
+            int y = rand.Next(1, (int)GrdScreen.Height / size) * size;
 
             for (int i = 0; i < 30; i++)
             {
@@ -89,7 +84,17 @@ namespace SnakeBiteGame
 
         private void InitEgg()
         {
+            egg = new Ellipse();
+            egg.Tag = new Point(rand.Next(1, 480 / size) * size, rand.Next(1, 380 / size) * size);
+            egg.Width = size;
+            egg.Height = size;
+            egg.Stroke = Brushes.Black;
+            egg.Fill = Brushes.Red;
 
+            Point p = (Point)egg.Tag;
+            CvsGame.Children.Add(egg);
+            Canvas.SetLeft(egg, p.X);
+            Canvas.SetTop(egg, p.Y);
         }
 
         private void PlayTimer_Tick(object sender, EventArgs e)
@@ -105,14 +110,63 @@ namespace SnakeBiteGame
                 }
 
                 // 키보드로 옮겼을 때 처리
+                Point pnt = (Point)snake[0].Tag;
+                if (move == "Right")
+                    snake[0].Tag = new Point(pnt.X + size, pnt.Y);
+                else if (move == "Left")
+                    snake[0].Tag = new Point(pnt.X - size, pnt.Y);
+                else if (move == "Up")
+                    snake[0].Tag = new Point(pnt.X, pnt.Y - size);
+                else if (move == "Down")
+                    snake[0].Tag = new Point(pnt.X, pnt.Y + size);
 
+                // 충돌여부 체크
+                Point cP = (Point)snake[0].Tag;
+                if ((cP.X <= 0 || cP.X >= GrdScreen.Width) || (cP.Y <=0 || cP.Y >= GrdScreen.Height))
+                {
+                    move = "";
+                    LblGameOver.Visibility = Visibility.Visible;
+                }
                 // 알을 먹었는지 체크
+                EatEgg();
             }
             if (startFlag)
             {
                 TimeSpan span = stopwatch.Elapsed;
                 TxtTime.Text = $"Time = {span.Minutes}:{span.Seconds}:{span.Milliseconds / 10}";
                 DrawSnake();
+            }
+        }
+
+        private void EatEgg()
+        {
+            Point pS = (Point)snake[0].Tag;
+            Point pE = (Point)egg.Tag;
+
+            if (pS.X == pE.X && pS.Y == pE.Y)
+            {
+                egg.Visibility = Visibility.Hidden;
+                visibleCount++;
+                snake[visibleCount - 1].Visibility = Visibility.Visible; // 꼬리를 하나 늘림
+                TxtScore.Text = "Eggs = " + (++eaten).ToString();
+
+                if (visibleCount == 30)
+                {
+                    playTimer.Stop();
+                    stopwatch.Stop();
+                    DrawSnake();
+                    TimeSpan ts = stopwatch.Elapsed;
+                    string TimeElapsed = String.Format("Time = {0:00}:{1:00}:{2:00}:{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+                    MessageBox.Show("Success!" + TimeElapsed + " sec");
+                    this.Close();
+
+                }
+
+                Point p = new Point(rand.Next(1, 480 / size) * size, rand.Next(1, 380 / size) * size);
+                egg.Tag = p;
+                egg.Visibility = Visibility.Visible;
+                Canvas.SetLeft(egg, p.X);
+                Canvas.SetTop(egg, p.Y);
             }
         }
 
@@ -128,10 +182,32 @@ namespace SnakeBiteGame
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (move == "") stopwatch.Start(); // 맨 처음 키가 눌리면 sw 시작
+            if (move == "")
+                stopwatch.Start(); // 맨 처음 키가 눌리면 sw 시작
 
-            // 키조작
-
+            if (e.Key == Key.Right)
+                move = "Right";
+            else if (e.Key == Key.Left)
+                move = "Left";
+            else if (e.Key == Key.Up)
+                move = "Up";
+            else if (e.Key == Key.Down)
+                move = "Down";
+            else if (e.Key == Key.Escape)
+                move = "";
         }
+
+        private void GameWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            InitSnake();
+            InitEgg();
+
+            move = "Up";
+            playTimer.Interval = new TimeSpan(0, 0, 0, 0, 100); // 0.1초
+            playTimer.Tick += PlayTimer_Tick;
+            playTimer.Start();
+        }
+
+
     }
-}
+    }
