@@ -156,6 +156,7 @@ namespace BookRentalShopApp
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
