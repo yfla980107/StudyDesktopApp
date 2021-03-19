@@ -33,5 +33,14 @@ namespace BookRentalShopApp.Helper
 
             return localIP;
         }
+
+        internal static string ReplaceCmdText(string strSourece) // 들어오는 문자를 받아서 replace 보안부분 보완
+        {
+            var result = strSourece.Replace("'", "＇"); // 특수문자 홑따옴표로 수정
+            result = result.Replace("--", ""); // -- 값은 없앰
+            result = result.Replace(";", ""); // ; 값은 없앰
+
+            return result;
+        }
     }
 }
