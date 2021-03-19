@@ -28,8 +28,10 @@ ___
 ---
 #### 메인 화면, 로그인 화면
 ![첫화면겸 로그인화면](https://user-images.githubusercontent.com/78572509/111719819-01b95480-88a0-11eb-82f1-261bfd769bd5.png)
-\n메인화면
+- 메인화면
+
 ![로그인 아이디,비번 입력](https://user-images.githubusercontent.com/78572509/111719896-2a414e80-88a0-11eb-85ea-5693b4c2b5f6.png)
-로그인 창에 아이디, 비밀번호 입력
+- 로그인 창에 아이디, 비밀번호 입력
+
 ![로그인성공](https://user-images.githubusercontent.com/78572509/111719926-39280100-88a0-11eb-8a0e-00856d298017.png)
-로그인 성공화면
+- 로그인 성공화면
