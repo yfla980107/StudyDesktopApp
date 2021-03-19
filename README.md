@@ -35,3 +35,13 @@ ___
 
 ![로그인성공](https://user-images.githubusercontent.com/78572509/111719926-39280100-88a0-11eb-8a0e-00856d298017.png)
 - 로그인 성공화면
+---
+#### 구분코드 화면
+![구분코드 관리 창](https://user-images.githubusercontent.com/78572509/111720152-acca0e00-88a0-11eb-8c10-5019c1221c03.png)
+- 구분코드 메인화면
+![구분코드 관리 신규등록](https://user-images.githubusercontent.com/78572509/111720285-e7cc4180-88a0-11eb-98ea-e9e1ed5e88a2.png)
+- 구분코드 신규 등록
+![구분코드 관리 신규 저장 성공](https://user-images.githubusercontent.com/78572509/111720315-f7e42100-88a0-11eb-9e25-4d5afd9dd608.png)
+- 구분코드 신규 등록 성공
+![구분코드 관리 신규 저장한 후 목록창](https://user-images.githubusercontent.com/78572509/111720204-c53a2880-88a0-11eb-92b7-7b1fd458c2a2.png)
+- 구분코드 신규 등록 후 목록창
