@@ -9,7 +9,7 @@ ___
 - [WinExecutiveBank](https://github.com/yfla980107/StudyDesktopApp/tree/main/WinformApp/WinExecutiveBank)
 - [WinFormAdvancedBank](https://github.com/yfla980107/StudyDesktopApp/tree/main/WinformApp/WinFormAdvancedBank)
 ___
-#### [WPFApp](https://github.com/yfla980107/StudyDesktopApp/tree/main/WPFApp)
+#### [WPF App](https://github.com/yfla980107/StudyDesktopApp/tree/main/WPFApp)
 - [WpfAdvBank](https://github.com/yfla980107/StudyDesktopApp/tree/main/WPFApp/WpfAdvBank)
 - [WpfExecutiveBank](https://github.com/yfla980107/StudyDesktopApp/tree/main/WPFApp/WpfExecutiveBank)
 
