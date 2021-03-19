@@ -39,9 +39,28 @@ ___
 #### 구분코드 화면
 ![구분코드 관리 창](https://user-images.githubusercontent.com/78572509/111720152-acca0e00-88a0-11eb-8c10-5019c1221c03.png)
 - 구분코드 메인화면
+
 ![구분코드 관리 신규등록](https://user-images.githubusercontent.com/78572509/111720285-e7cc4180-88a0-11eb-98ea-e9e1ed5e88a2.png)
 - 구분코드 신규 등록
+
 ![구분코드 관리 신규 저장 성공](https://user-images.githubusercontent.com/78572509/111720315-f7e42100-88a0-11eb-9e25-4d5afd9dd608.png)
 - 구분코드 신규 등록 성공
+
 ![구분코드 관리 신규 저장한 후 목록창](https://user-images.githubusercontent.com/78572509/111720204-c53a2880-88a0-11eb-92b7-7b1fd458c2a2.png)
 - 구분코드 신규 등록 후 목록창
+---
+#### 회원관리 화면
+![회원관리 창](https://user-images.githubusercontent.com/78572509/111720413-282bbf80-88a1-11eb-9824-dffe308b732b.png)
+- 회원관리 메인화면
+
+![홍길순 회원 저장](https://user-images.githubusercontent.com/78572509/111720441-34b01800-88a1-11eb-8ee8-c3c13fb99413.png)
+- 신규 회원 홍길순 저장
+
+![홍길순 저장성공](https://user-images.githubusercontent.com/78572509/111720455-3e398000-88a1-11eb-8d35-2cafee06dd50.png)
+- 홍길순 저장성공
+
+![홍길순 목록창](https://user-images.githubusercontent.com/78572509/111720479-498cab80-88a1-11eb-9d16-bf8be7926b3c.png)
+- 홍길순회원 저장 후 메인화면
+
+
+
