@@ -26,7 +26,7 @@ ___
 5. [도서대여 화면]
 
 ---
-#### 메인 화면, 로그인 화면
+### 메인 화면, 로그인 화면
 ![첫화면겸 로그인화면](https://user-images.githubusercontent.com/78572509/111719819-01b95480-88a0-11eb-82f1-261bfd769bd5.png)
 - 메인화면
 
@@ -36,7 +36,7 @@ ___
 ![로그인성공](https://user-images.githubusercontent.com/78572509/111719926-39280100-88a0-11eb-8a0e-00856d298017.png)
 - 로그인 성공화면
 ---
-#### 구분코드 화면
+### 구분코드 화면
 ![구분코드 관리 창](https://user-images.githubusercontent.com/78572509/111720152-acca0e00-88a0-11eb-8c10-5019c1221c03.png)
 - 구분코드 메인화면
 
