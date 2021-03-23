@@ -4,6 +4,6 @@
     <SolidColorBrush x:Key="accentBrush" Color="Red" />
     <LinearGradientBrush x:Key="background">
         <GradientStop Color="#ffdbffe7" Offset="0"/>
-        <GradientStop Color="#ff03882d" Offset="1" />
+        <GradientStop Color="MediumSeaGreen" Offset="1" />
     </LinearGradientBrush>
 </ResourceDictionary>
