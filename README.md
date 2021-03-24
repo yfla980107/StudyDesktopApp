@@ -84,10 +84,13 @@ ___
 - 메인화면에서 회원버튼 클릭
  
 ![대여 회원리스트 버튼 누를시](https://user-images.githubusercontent.com/78572509/112269194-64a15600-8cbb-11eb-86c2-5c7c7271339e.png)
-- 회원중 홍길순 선택
+- 회원리스트 팝업창에서 홍길순 선택
 
 ![도서버튼](https://user-images.githubusercontent.com/78572509/112277779-6ec85200-8cc5-11eb-80e0-f0c610e8b717.png)
-- 도서리스트 중 정보처리기사 선택
+- 도서버튼 클릭
+
+![대여 도서리스트버튼 누를시](https://user-images.githubusercontent.com/78572509/112278428-2a898180-8cc6-11eb-869a-370691e2541b.png)
+- 도서리스트 팝 정보처리기사 선택
 
 ![대여 대여중 신규저장](https://user-images.githubusercontent.com/78572509/112277888-93bcc500-8cc5-11eb-97d8-2766c33aa0a1.png)
 - 홍길순 정보처리기사 대여 신규 저장
