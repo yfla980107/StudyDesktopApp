@@ -81,6 +81,9 @@ ___
 ---
 #### 대여관리 화면
 ![회원버튼](https://user-images.githubusercontent.com/78572509/111721119-9de45b00-88a2-11eb-91a6-7a48d2425b3e.png)
+- 메인화면에서 회원버튼 클릭
+![대여 회원리스트 버튼 누를시](https://user-images.githubusercontent.com/78572509/112269194-64a15600-8cbb-11eb-86c2-5c7c7271339e.png)
+- 회원리스트 팝업창
 
 
 
