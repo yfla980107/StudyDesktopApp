@@ -90,7 +90,7 @@ ___
 - 도서버튼 클릭
 
 ![대여 도서리스트버튼 누를시](https://user-images.githubusercontent.com/78572509/112278428-2a898180-8cc6-11eb-869a-370691e2541b.png)
-- 도서리스트 팝 정보처리기사 선택
+- 도서리스트 팝업창에서 정보처리기사 선택
 
 ![대여 대여중 신규저장](https://user-images.githubusercontent.com/78572509/112277888-93bcc500-8cc5-11eb-97d8-2766c33aa0a1.png)
 - 홍길순 정보처리기사 대여 신규 저장
