@@ -82,8 +82,22 @@ ___
 #### 대여관리 화면
 ![회원버튼](https://user-images.githubusercontent.com/78572509/111721119-9de45b00-88a2-11eb-91a6-7a48d2425b3e.png)
 - 메인화면에서 회원버튼 클릭
+ 
 ![대여 회원리스트 버튼 누를시](https://user-images.githubusercontent.com/78572509/112269194-64a15600-8cbb-11eb-86c2-5c7c7271339e.png)
-- 회원리스트 팝업창
+- 회원중 홍길순 선택
 
+![도서버튼](https://user-images.githubusercontent.com/78572509/112277779-6ec85200-8cc5-11eb-80e0-f0c610e8b717.png)
+- 도서리스트 중 정보처리기사 선택
 
+![대여 대여중 신규저장](https://user-images.githubusercontent.com/78572509/112277888-93bcc500-8cc5-11eb-97d8-2766c33aa0a1.png)
+- 홍길순 정보처리기사 대여 신규 저장
+
+![대여리스트에 뜬 홍길순 확인](https://user-images.githubusercontent.com/78572509/112278055-c1097300-8cc5-11eb-953c-57bc49be826b.png)
+- 대여리스트에서 홍길순 확인
+
+![대여상태 반납으로 다시저장](https://user-images.githubusercontent.com/78572509/112278099-cf578f00-8cc5-11eb-89b5-be4e4ad8dc75.png)
+- 대여중에서 반납으로 저장
+
+![목록에 반납일 확인](https://user-images.githubusercontent.com/78572509/112278137-ded6d800-8cc5-11eb-860d-b9dfe14c5268.png)
+- 반납완료한 홍길순 날짜 확인가능
 
