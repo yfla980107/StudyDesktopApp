@@ -20,10 +20,10 @@ ___
 - [코드보기](https://github.com/yfla980107/StudyDesktopApp/tree/main/WinformApp/WinFormAdvancedBank/BookRentalShopApp)
 
 1. [메인화면, 로그인 화면](#메인-화면,-로그인-화면)
-2. [도서 구분코드 화면]
-3. [회원관리 화면]
-4. [도서관리 화면]
-5. [도서대여 화면]
+2. [도서 구분코드 화면](#구분코드-화면)
+3. [회원관리 화면](#회원관리-화면)
+4. [도서관리 화면](#도서관리-화면)
+5. [도서대여 화면](#대여관리-화면)
 
 ---
 ### 메인 화면, 로그인 화면
@@ -81,6 +81,26 @@ ___
 ---
 #### 대여관리 화면
 ![회원버튼](https://user-images.githubusercontent.com/78572509/111721119-9de45b00-88a2-11eb-91a6-7a48d2425b3e.png)
+- 메인화면에서 회원버튼 클릭
+ 
+![대여 회원리스트 버튼 누를시](https://user-images.githubusercontent.com/78572509/112269194-64a15600-8cbb-11eb-86c2-5c7c7271339e.png)
+- 회원리스트 팝업창에서 홍길순 선택
 
+![도서버튼](https://user-images.githubusercontent.com/78572509/112277779-6ec85200-8cc5-11eb-80e0-f0c610e8b717.png)
+- 도서버튼 클릭
 
+![대여 도서리스트버튼 누를시](https://user-images.githubusercontent.com/78572509/112278428-2a898180-8cc6-11eb-869a-370691e2541b.png)
+- 도서리스트 팝업창에서 정보처리기사 선택
+
+![대여 대여중 신규저장](https://user-images.githubusercontent.com/78572509/112277888-93bcc500-8cc5-11eb-97d8-2766c33aa0a1.png)
+- 홍길순 정보처리기사 대여 신규 저장
+
+![대여리스트에 뜬 홍길순 확인](https://user-images.githubusercontent.com/78572509/112278055-c1097300-8cc5-11eb-953c-57bc49be826b.png)
+- 대여리스트에서 홍길순 확인
+
+![대여상태 반납으로 다시저장](https://user-images.githubusercontent.com/78572509/112278099-cf578f00-8cc5-11eb-89b5-be4e4ad8dc75.png)
+- 대여중에서 반납으로 저장
+
+![목록에 반납일 확인](https://user-images.githubusercontent.com/78572509/112278137-ded6d800-8cc5-11eb-860d-b9dfe14c5268.png)
+- 반납완료한 홍길순 날짜 확인가능
 
